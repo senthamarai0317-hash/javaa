@@ -6,6 +6,6 @@ COPY hotelserver.java .
 
 RUN javac hotelserver.java
 
-EXPOSE 5000
+EXPOSE 5550
 
 CMD ["java", "hotelserver"]
