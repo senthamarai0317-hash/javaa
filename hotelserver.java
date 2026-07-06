@@ -10,7 +10,7 @@ public class hotelserver {
 
     public static void main(String[] args) throws Exception {
 
-        HttpServer server = HttpServer.create(new InetSocketAddress(5000), 0);
+        HttpServer server = HttpServer.create(new InetSocketAddress(5550), 0);
 
         server.createContext("/", new HttpHandler() {
             @Override
@@ -229,6 +229,6 @@ padding:20px;
         server.start();
 
         System.out.println("Server started...");
-        System.out.println("http://localhost:5000");
+        System.out.println("http://localhost:5550");
     }
 }
