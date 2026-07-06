@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('checkinout') {
+            steps{
+                git(
+                    branch: 'main',
+                    url:'https://github.com/senthamarai0317-hash/javaa.git')
+             }
+        }
+         stage('docker'){
+             steps{
+                 sh'docker build -t navani .'
+                 }
+         }
+         stage('run container') {
+             steps{
+                 sh 'docker run -p 5000:5000 --name web-doc navani'
+             }
+         }
+    }
+}
